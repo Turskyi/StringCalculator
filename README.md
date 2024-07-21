@@ -11,6 +11,8 @@ It supports various features such as custom delimiters,
 handling new lines, and ignoring numbers larger than 1000.
 This project is a great exercise for beginners to practice string manipulation,
 exception handling, and test-driven development (TDD) in Java.
+This project also includes comprehensive tests to validate the functionality
+and ensure the requirements are met.
 
 ## Features
 
@@ -35,39 +37,6 @@ Programming language: [Java](https://www.oracle.com/java/);
    - Example: `"//***\n1***2***3"` will return `6`.
 7. **Multiple Delimiters**: The `add` method supports multiple delimiters.
    - Example: `"//$,@\n1$2@3"` will return `6`.
-
-## Installation Instructions
-
-1. Download the project.
-2. Open the project in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse).
-3. Compile and run the `Main` class to see the String Calculator in action.
-
-## Usage
-
-To use the String Calculator, call the `add` method with a string containing
-the numbers you want to add.
-The method will return the sum of the numbers.
-You can specify custom delimiters and handle new lines as described in the
-features section.
-
-**Educational Value**:
-It can serve as a good example for learning and practicing TDD,
-string parsing, and basic arithmetic operations in Java.
-
-**Code Reuse**:
-The code can be reused or extended for other projects
-that require string-based calculations.
-
-### Example Code
-
-```java
-public class Main {
-    public static void main(String[] args) {
-        final int result = StringCalculator.add ("//$,@\n1$2@3");
-        System.out.println ("Result: " + result); // Output: Result: 6
-    }
-}
-```
 
 ## The goal of the program:
 
@@ -113,3 +82,59 @@ public class Main {
    a. “//$,@\n1$2@3” - Result 6
 8. Combine 2 and 3 bonus questions. Allow multiple delimiters of arbitrary
    length.
+
+## Tests
+
+The String Calculator project includes comprehensive tests to validate the
+functionality and ensure the requirements are met.
+These tests cover various scenarios such as handling empty strings, custom
+delimiters, negative numbers, and more.
+To run the tests, use your preferred Java IDE or a build tool like Maven or
+Gradle.
+
+### Example Test
+
+```java
+public class StringCalculatorTest {
+
+   @Test
+   public final void whenEmptyStringIsUsedThenReturnValueIs0() {
+      assertEquals (0, StringCalculator.add (""));
+   }
+}
+```
+
+## Usage
+
+To use the String Calculator, call the `add` method with a string containing
+the numbers you want to add.
+The method will return the sum of the numbers.
+You can specify custom delimiters and handle new lines as described in the
+features section.
+
+**Educational Value**:
+It can serve as a good example for learning and practicing TDD,
+string parsing, and basic arithmetic operations in Java.
+
+**Code Reuse**:
+The code can be reused or extended for other projects
+that require string-based calculations.
+
+### Example Code
+
+```java
+public class Main {
+   public static void main(String[] args) {
+      final int result = StringCalculator.add ("//$,@\n1$2@3");
+      System.out.println ("Result: " + result); // Output: Result: 6
+   }
+}
+```
+
+## Installation Instructions
+
+1. Download the project.
+2. Open the project in your preferred Java IDE (e.g., IntelliJ IDEA, Eclipse).
+3. Compile and run the `Main` class to see the String Calculator in action.
+4. Compile and run the `StringCalculatorTest` class to see the tests in action
+   and validate the functionality.
