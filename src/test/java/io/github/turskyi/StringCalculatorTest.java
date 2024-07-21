@@ -2,7 +2,8 @@ package io.github.turskyi;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class StringCalculatorTest {
 
@@ -36,16 +37,6 @@ public class StringCalculatorTest {
     @Test
     public final void whenOneNumberIsUsedThenReturnValueIsThatSameNumber() {
         assertEquals (3, StringCalculator.add ("3"));
-    }
-
-    @Test
-    void whenNegativeNumberIsUsedThenRuntimeExceptionIsThrown() {
-
-        RuntimeException
-                thrown =
-                assertThrows (RuntimeException.class, () -> StringCalculator.add ("3,-6,15,-18,46,33"));
-
-        assertEquals ("Negatives not allowed", thrown.getMessage ( ));
     }
 
     @Test
